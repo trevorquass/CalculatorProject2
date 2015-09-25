@@ -20,6 +20,10 @@ namespace Calculator
             {
                 Console.WriteLine("\nException caught, cannot divide by zero.", e);
             }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("\nOverflow error. Cannot perform operation.", e);
+            }
         }
     }
 }

@@ -9,14 +9,17 @@ namespace Calculator
     public class SubtractionOperator
     {
         public decimal result;
-        public decimal Subtract(decimal value1, decimal value2)
+        public void Subtract(decimal value1, decimal value2)
         {
-            result = value1 - value2;
-            return result;
-        }
-        public void PrintResult()
-        {
-            Console.WriteLine("\nResult: " + result);
-        }            
+            try
+            {
+                result = value1 - value2;
+                Console.WriteLine("\nResult: " + result);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("\nOverflow error. Cannot perform operation.", e);
+            }
+        }           
     }
 }

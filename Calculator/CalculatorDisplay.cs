@@ -36,7 +36,7 @@ namespace Calculator
                 while (true)
                 {
                     if(mathOperator == "*" || mathOperator == "+" || mathOperator == "-" || mathOperator == "/"){                          
-                        break;
+                    break;
                     }
                     else
                     {
@@ -62,15 +62,12 @@ namespace Calculator
                 {
                     case "+":
                         add.Add(firstNumber, secondNumber);
-                        add.PrintResult();
                         break;
                     case "-":
                         subtract.Subtract(firstNumber, secondNumber);
-                        subtract.PrintResult();
                         break;
                     case "*":
                         multiply.Multiply(firstNumber, secondNumber);
-                        multiply.PrintResult();
                         break;
                     case "/":
                         divide.Division(firstNumber, secondNumber);
