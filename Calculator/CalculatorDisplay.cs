@@ -7,109 +7,79 @@ using System.Threading.Tasks;
 namespace Calculator
 {
     public class CalculatorDisplay
-    {
+    {     
+        AdditionOperator add = new AdditionOperator();
+        SubtractionOperator subtract = new SubtractionOperator();
+        MultiplicationOperator multiply = new MultiplicationOperator();
+        DivisionOperator divide = new DivisionOperator();
         public decimal firstNumber, secondNumber;
         public string mathOperator;
+
         public void RunCalculator()
         {
             Console.WriteLine("Enter first number:");
-            try
+            while (true)
             {
-                firstNumber = decimal.Parse(Console.ReadLine());
+                try
+                {
+                    firstNumber = decimal.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("\nInvalid input entered. Enter Again\n", e);
+                }
             }
-            catch (Exception e)
-            {
-                Console.WriteLine("\nInvalid input entered.\n", e);
-                CalculatorDisplay calculatorDisplay = new CalculatorDisplay();
-                calculatorDisplay.RunCalculator();
-            }
-            Console.WriteLine("\nEnter operator choice (+,-,*,/):");
-            mathOperator = Console.ReadLine();
+                Console.WriteLine("\nEnter operator choice (+,-,*,/):");
+                mathOperator = Console.ReadLine();                 
+                while (true)
+                {
+                    if(mathOperator == "*" || mathOperator == "+" || mathOperator == "-" || mathOperator == "/"){                          
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nInvalid Operator Entered, enter again\n");
+                        mathOperator = Console.ReadLine();
+                    }
+                }
 
-            if (mathOperator == "+")
-            {
-                Console.WriteLine("\nEnter second number:");
-                try
+                Console.WriteLine("\nEnter Second number:");
+                while (true)
                 {
-                    secondNumber = decimal.Parse(Console.ReadLine());
+                    try
+                    {
+                        secondNumber = decimal.Parse(Console.ReadLine());
+                        break;
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("\nInvalid input entered. Enter Again\n", e);
+                    }
                 }
-                catch (Exception e)
+                switch (mathOperator)
                 {
-                    Console.WriteLine("\nInvalid input entered.\n", e);
-                    CalculatorDisplay calculatorDisplay = new CalculatorDisplay();
-                    calculatorDisplay.RunCalculator();
-                }
-                AdditionOperator add = new AdditionOperator();
-                add.Add(firstNumber, secondNumber);
-                add.PrintResult();
-            }
-            else if (mathOperator == "-")
-            {
-                Console.WriteLine("\nEnter second number:");
-                try
-                {
-                    secondNumber = decimal.Parse(Console.ReadLine());
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("\nInvalid input entered.\n", e);
-                    CalculatorDisplay calculatorDisplay = new CalculatorDisplay();
-                    calculatorDisplay.RunCalculator();
-                }
-                SubtractionOperator subtract = new SubtractionOperator();
-                subtract.Subtract(firstNumber, secondNumber);
-                subtract.PrintResult();
-            }
-            else if (mathOperator == "*")
-            {
-                Console.WriteLine("\nEnter second number:");
-                try
-                {
-                    secondNumber = decimal.Parse(Console.ReadLine());
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("\nInvalid input entered.\n", e);
-                    CalculatorDisplay calculatorDisplay = new CalculatorDisplay();
-                    calculatorDisplay.RunCalculator();
-                }
-                MultiplicationOperator multiply = new MultiplicationOperator();
-                multiply.Multiply(firstNumber, secondNumber);
-                multiply.PrintResult();
-            }
-            else if (mathOperator == "/")
-            {
-                Console.WriteLine("\nEnter second number:");
-                try
-                {
-                    secondNumber = decimal.Parse(Console.ReadLine());
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("\nInvalid input entered.\n", e);
-                    CalculatorDisplay calculatorDisplay = new CalculatorDisplay();
-                    calculatorDisplay.RunCalculator();
-                }
-                DivisionOperator divide = new DivisionOperator();
-                divide.Division(firstNumber, secondNumber);
-            }
-            else
-            {
-                Console.WriteLine("\nInvalid operator entered.");
-            }
-            
-            Console.WriteLine("\nPerform new operation? (yes/no):\n");
-            string performNewOperationResponse = Console.ReadLine();
-
-            if (performNewOperationResponse == "yes")
-            {
-                CalculatorDisplay calculatorDisplay = new CalculatorDisplay();
-                calculatorDisplay.RunCalculator();
-            }
-            else
-            {
-                Environment.Exit(0);
+                    case "+":
+                        add.Add(firstNumber, secondNumber);
+                        add.PrintResult();
+                        break;
+                    case "-":
+                        subtract.Subtract(firstNumber, secondNumber);
+                        subtract.PrintResult();
+                        break;
+                    case "*":
+                        multiply.Multiply(firstNumber, secondNumber);
+                        multiply.PrintResult();
+                        break;
+                    case "/":
+                        divide.Division(firstNumber, secondNumber);
+                        break;
+                    default:
+                        Console.WriteLine("invalid operator");
+                        break;
+                        
+                }                   
             }
         }
-    }
+    
 }
