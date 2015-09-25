@@ -14,6 +14,7 @@ namespace Calculator
         DivisionOperator divide = new DivisionOperator();
         public decimal firstNumber, secondNumber;
         public string mathOperator;
+        public string reply, yes;
 
         public void RunCalculator()
         {while(true)
@@ -81,6 +82,17 @@ namespace Calculator
                        
                 }
                 Console.WriteLine("\n");
+                Console.WriteLine("Do you want more math?" + "<yes/no>");
+                
+                if (Console.ReadLine() == "yes")
+                {
+                    Console.WriteLine("\n");
+                    RunCalculator();
+                }
+                else
+                {
+                    Environment.Exit(0);
+                }
                 }                   
             }
         }
