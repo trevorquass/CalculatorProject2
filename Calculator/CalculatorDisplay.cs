@@ -12,7 +12,7 @@ namespace Calculator
         SubtractionOperator subtract = new SubtractionOperator();
         MultiplicationOperator multiply = new MultiplicationOperator();
         DivisionOperator divide = new DivisionOperator();
-        public decimal firstNumber, secondNumber;
+        public decimal firstNumber, secondNumber, result;
         public string mathOperator;
         public string reply, yes;
 

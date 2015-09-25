@@ -15,6 +15,7 @@ namespace Calculator
             {
                 result = value1 * value2;
                 Console.WriteLine("\nResult: " + result);
+                Console.WriteLine(result > 999999 ? "That is a large number." : "Cool number!");
             }
             catch (OverflowException e)
             {

@@ -15,6 +15,7 @@ namespace Calculator
             {
                 total = amount / amount2;
                 Console.WriteLine("\nResult: " + total);
+                Console.WriteLine(total > 999999 ? "That is a large number." : "Cool number!");
             }
             catch (DivideByZeroException e)
             {

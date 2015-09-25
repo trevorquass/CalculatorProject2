@@ -10,3 +10,9 @@ C:\Users\tquass\Calculator2\CalculatorProject2\Calculator\obj\Debug\Calculator.p
 C:\Users\tquass\Calculator2\CalculatorProject2\Calculator\bin\Debug\Calculator.exe
 C:\Users\tquass\Calculator2\CalculatorProject2\Calculator\bin\Debug\Calculator.pdb
 C:\Users\tquass\Calculator2\CalculatorProject2\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+C:\Users\nkindschi\CalculatorProject2\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\nkindschi\CalculatorProject2\Calculator\obj\Debug\Calculator.exe
+C:\Users\nkindschi\CalculatorProject2\Calculator\obj\Debug\Calculator.pdb
+C:\Users\nkindschi\CalculatorProject2\Calculator\bin\Debug\Calculator.exe
+C:\Users\nkindschi\CalculatorProject2\Calculator\bin\Debug\Calculator.pdb
+C:\Users\nkindschi\CalculatorProject2\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
