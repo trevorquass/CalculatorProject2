@@ -16,6 +16,7 @@ namespace Calculator
         public string mathOperator;
 
         public void RunCalculator()
+        {while(true)
         {
             Console.WriteLine("Enter first number:");
             while (true)
@@ -77,7 +78,9 @@ namespace Calculator
                     default:
                         Console.WriteLine("invalid operator");
                         break;
-                        
+                       
+                }
+                Console.WriteLine("\n");
                 }                   
             }
         }
